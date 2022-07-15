@@ -16,10 +16,101 @@
     h1 a{color: #48b1f4;text-decoration:none;}
     .owa_script{ color: #fff; display: block; width: -webkit-fill-available; height: 100%;padding: 0;margin: 0;position: relative;font-size: 40px;background: #000;}
     .flipclass{   -moz-transform: scale(1, -1); -webkit-transform: scale(1, -1); -o-transform: scale(1, -1); -ms-transform: scale(1, -1); transform: scale(-1, 1);}   
-    #canvas {display: block;margin: 20px auto 0 auto;border-bottom: 2px solid #9C27B0;} 
+    #canvas {display: block;margin: 20px auto 0 auto;border-bottom: 2px solid #9C27B0;display: none;} 
+    
+    
+    
+    
+    .dashFooterBox {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.dashFooterBoxInner {
+  position: relative;
+}
+
+.dashFooterBtn {
+  position: absolute;
+  right: 60px;
+  bottom: 0;
+  z-index: 9;
+}
+
+.dashFooter {
+  background: #333333;
+  padding: 20px 0px;
+  position: absolute;
+  bottom: 0;
+  z-index: 8;
+  width: 100%;
+}
+
+/* hide footer until checkbox is checked */
+.dashFooterBtn label {
+  background: #2d2d2d;
+  border-top: 1px solid #424242;
+  border-left: 1px solid #424242;
+  border-right: 1px solid #424242;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  -webkit-border-radius: 3px 3px 0px 0px;
+  -moz-border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+        font-size: 13px;
+}
+
+.dashFooter {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.r-foot-check {
+  display: none;
+}
+
+input.r-foot-check:checked + .dashFooter {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+    ul{padding: 0;margin: 0;}
+
     </style>
 
 <h1><a href="https://www.youtube.com/owaschool">owaschool </a></h1>
+
+    
+<div class="owa_script" ><textarea class="owa_script owa_script_scrool" id="owa_script_scrool" style="margin-left: 25px;" > Past Your Script here...  </textarea >  </div>
+    
+
+<footer class="dashFooterBox">
+  <div class="dashFooterBoxInner">
+    <!-- footer button -->
+    <div class="dashFooterBtn">
+      <label for="show-foot">Settings</label>
+    </div>
+    <!-- end footer button -->
+    <!-- footer -->
+    <input type="checkbox" id="show-foot" name="show-the-footer" class="r-foot-check">
+    <nav class="dashFooter">
+      <div class="default-width">
+        <div class="dashFooterInner">
+          <ul class="footNavUL">
 <div class="" style="display: flex;">
 <input type="file" onchange="readURL(this, 'owa_script_scrool');" style="width: 20%;display: inline-block;height: 30px; background:#fff; " >
 <input id="owa_scrool_speed" placeholder="1" value="1" type="text" style="width: 20%;display: inline-block;height: 25px;"> 
@@ -27,11 +118,21 @@
 <input onchange="owa_fontsize(this)" placeholder="40" value="40" type="text" style="width: 20%;display: inline-block;"> 
  <input value="flip Text" type="button" style="width: 20%;display: inline-block;" onclick="flipstyle()" >     
 </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </div></footer>
     
-<div class="owa_script" ><textarea class="owa_script owa_script_scrool" id="owa_script_scrool" style="margin-left: 25px;" > Past Your Script here...  </textarea >  </div>
     
-
-
+    
+    
+    
+    
+    
+    
+    
+    
 
 <audio id="microphone" autoplay></audio>
 <div class="wrap">
@@ -148,7 +249,9 @@ function startRecord(e) {
     tip.innerHTML = e.name; 
   });
   var drawSpectrum = function (analyser) {
-       
+      
+
+      
     console.log(new Uint8Array(analyser.frequencyBinCount));
     var canvas = document.getElementById('canvas'),
     cwidth = canvas.width,
@@ -178,10 +281,11 @@ function startRecord(e) {
 
      
       for (var i = 0; i < meterNum; i++) {
-var owa_scrlsp = document.getElementById('owa_scrool_speed').value;
-var owa_frequency = document.getElementById('owa_frequency').value;  
-        var value = array[i * step];
-       var gggg = ctx.fillRect(i * (meterWidth + gap), cheight - value, meterWidth, cheight);
+   
+          var value = array[i * step];
+          var gggg = ctx.fillRect(i * (meterWidth + gap), cheight - value, meterWidth, cheight);
+          var owa_scrlsp = document.getElementById('owa_scrool_speed').value;
+          var owa_frequency = document.getElementById('owa_frequency').value;  
 if(value > parseInt(owa_frequency)){
     $("#owa_script_scrool").scrollTop($("#owa_script_scrool").scrollTop() + parseInt(owa_scrlsp)); 
     break;
@@ -194,7 +298,7 @@ if(value > parseInt(owa_frequency)){
       
    setTimeout(function(){
       requestAnimationFrame(drawMeter);
-  }, 22);   
+  }, 39);   
 
 
 
