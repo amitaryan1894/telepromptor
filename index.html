@@ -148,10 +148,7 @@ function startRecord(e) {
     tip.innerHTML = e.name; 
   });
   var drawSpectrum = function (analyser) {
-      
-var owa_scrlsp = document.getElementById('owa_scrool_speed').value;
-var owa_frequency = document.getElementById('owa_frequency').value;  
-      
+       
     console.log(new Uint8Array(analyser.frequencyBinCount));
     var canvas = document.getElementById('canvas'),
     cwidth = canvas.width,
@@ -181,7 +178,8 @@ var owa_frequency = document.getElementById('owa_frequency').value;
 
      
       for (var i = 0; i < meterNum; i++) {
-   
+var owa_scrlsp = document.getElementById('owa_scrool_speed').value;
+var owa_frequency = document.getElementById('owa_frequency').value;  
         var value = array[i * step];
        var gggg = ctx.fillRect(i * (meterWidth + gap), cheight - value, meterWidth, cheight);
 if(value > parseInt(owa_frequency)){
