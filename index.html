@@ -28,10 +28,7 @@
  <input value="flip Text" type="button" style="width: 20%;display: inline-block;" onclick="flipstyle()" >     
 </div>
     
-<div class="owa_script" ><textarea class="owa_script owa_script_scrool" id="owa_script_scrool" style="margin-left: 25px;" > If you are not able to speak with confidence in front of the camera because you do not remember the script, then you should use this software.
-Step 1: Upload or Paste your written script file in this software.
-step 2 If the default speed and noise frequency is more or less then adjust it.
-Now when you read the script in front of the camera, it will automatically scroll. If you like this software then you can support me on my youtube channel my youtube channel is "owaschool"  </textarea >  </div>
+<div class="owa_script" ><textarea class="owa_script owa_script_scrool" id="owa_script_scrool" style="margin-left: 25px;" > Past Your Script here...  </textarea >  </div>
     
 
 
@@ -102,8 +99,7 @@ function flipstyle(){
     $("#owa_script_scrool").val(msg);
 }
 
-var owa_scrlsp = document.getElementById('owa_scrool_speed').value;
-var owa_frequency = document.getElementById('owa_frequency').value;  
+
 
 
 var canvas = document.getElementById('canvas');
@@ -152,6 +148,9 @@ function startRecord(e) {
     tip.innerHTML = e.name; 
   });
   var drawSpectrum = function (analyser) {
+      
+var owa_scrlsp = document.getElementById('owa_scrool_speed').value;
+var owa_frequency = document.getElementById('owa_frequency').value;  
       
     console.log(new Uint8Array(analyser.frequencyBinCount));
     var canvas = document.getElementById('canvas'),
