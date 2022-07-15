@@ -9,6 +9,41 @@
 <body>
 
 
+
+<style>html, body{ width: 100%; height: 100%; padding: 0; margin: 0; background-color:#222; font-size: 0; }
+    h1{width: 100%;font-family: sans-serif;position:relative;text-align:center;color:white;font-size: 18px;
+    opacity: 1;transition: opacity 1s ease-in-out; -moz-transition: opacity 1s ease-in-out; -webkit-transition: opacity 1s ease-in-out;}
+    h1 a{color: #48b1f4;text-decoration:none;}
+    .owa_script{ color: #fff; display: block; width: -webkit-fill-available; height: 100%;padding: 0;margin: 0;position: relative;font-size: 40px;background: #000;}
+    .flipclass{   -moz-transform: scale(1, -1); -webkit-transform: scale(1, -1); -o-transform: scale(1, -1); -ms-transform: scale(1, -1); transform: scale(-1, 1);}   
+    #canvas {display: block;margin: 20px auto 0 auto;border-bottom: 2px solid #9C27B0;} 
+    </style>
+
+<h1><a href="https://www.youtube.com/owaschool">owaschool </a></h1>
+<div class="" style="display: flex;">
+<input type="file" onchange="readURL(this, 'owa_script_scrool');" style="width: 20%;display: inline-block;height: 30px; background:#fff; " >
+<input id="owa_scrool_speed" placeholder="1" value="1" type="text" style="width: 20%;display: inline-block;height: 25px;"> 
+<input id="owa_frequency" placeholder="230" value="230" type="text" style="width: 20%;display: inline-block;">  
+<input onchange="owa_fontsize(this)" placeholder="40" value="40" type="text" style="width: 20%;display: inline-block;"> 
+ <input value="flip Text" type="button" style="width: 20%;display: inline-block;" onclick="flipstyle()" >     
+</div>
+    
+<div class="owa_script" ><textarea class="owa_script owa_script_scrool" id="owa_script_scrool" style="margin-left: 25px;" > Past Your Script here...  </textarea >  </div>
+    
+
+
+
+<audio id="microphone" autoplay></audio>
+<div class="wrap">
+  <canvas id="canvas" width="1000" height="350"></canvas>
+</div>
+    
+    
+    
+    
+    
+    
+
 <script>
 
 
@@ -45,7 +80,8 @@ var playFn = function() {
 document.body.addEventListener('touchend', playFn);
 
 
-function readURL(input, owaschool_area) {  if (input.files && input.files[0]) {  
+function readURL(input, owaschool_area) {  
+if (input.files && input.files[0]) {  
 var reader = new FileReader();
 reader.onload = function (e) {
 var textArea = document.getElementById(owaschool_area);
@@ -57,7 +93,6 @@ reader.readAsText(input_owaschool); }
 function owa_fontsize(fontsize){
     document.getElementById("owa_script_scrool").style.fontSize= fontsize.value+ "px";
 }
-    
 function flipstyle(){
     $("#owa_script_scrool").toggleClass('flipclass');
     var msg = $("#owa_script_scrool").val().replace(/\n/g, "");
@@ -88,6 +123,7 @@ function startRecord(e) {
     video: false
   });
   record.then(function onSuccess(stream) {
+      
     audioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext;
     try {
       context = new audioContext();
@@ -104,11 +140,16 @@ function startRecord(e) {
     audioInput.connect(analyser);
 
     drawSpectrum(analyser);
+      
+      
+    
+      
   });
   record.catch(function (e) {
-    tip.innerHTML = e.name;
+    tip.innerHTML = e.name; 
   });
   var drawSpectrum = function (analyser) {
+      
     console.log(new Uint8Array(analyser.frequencyBinCount));
     var canvas = document.getElementById('canvas'),
     cwidth = canvas.width,
@@ -136,9 +177,9 @@ function startRecord(e) {
 
       
 
-      setTimeout(function(){ 
+     
       for (var i = 0; i < meterNum; i++) {
-  
+   
         var value = array[i * step];
        var gggg = ctx.fillRect(i * (meterWidth + gap), cheight - value, meterWidth, cheight);
 if(value > parseInt(owa_frequency)){
@@ -149,15 +190,17 @@ if(value > parseInt(owa_frequency)){
 
 
 
-      }   }, 38);  
+      }   
+      
+   setTimeout(function(){
       requestAnimationFrame(drawMeter);
- 
+  }, 39);   
 
 
 
      
     }
-
+ 
 
 
 
@@ -169,35 +212,5 @@ if(value > parseInt(owa_frequency)){
 
 startRecord();
 </script>
-
-<style>html, body{ width: 100%; height: 100%; padding: 0; margin: 0; background-color:#222; font-size: 0; }
-    h1{width: 100%;font-family: sans-serif;position:relative;text-align:center;color:white;font-size: 18px;
-    opacity: 1;transition: opacity 1s ease-in-out; -moz-transition: opacity 1s ease-in-out; -webkit-transition: opacity 1s ease-in-out;}
-    h1 a{color: #48b1f4;text-decoration:none;}
-    .owa_script{ color: #fff; display: block; width: -webkit-fill-available; height: 100%;padding: 0;margin: 0;position: relative;font-size: 40px;background: #000;}
-    .flipclass{   -moz-transform: scale(1, -1); -webkit-transform: scale(1, -1); -o-transform: scale(1, -1); -ms-transform: scale(1, -1); transform: scale(-1, 1);}   
-    #canvas {display: block;margin: 20px auto 0 auto;border-bottom: 2px solid #9C27B0;
-} 
-    </style>
-
-<h1><a href="https://www.youtube.com/owaschool">owaschool </a></h1>
-<div class="" style="display: flex;">
-<input type="file" onchange="readURL(this, 'owa_script_scrool');" style="width: 20%;display: inline-block;height: 30px; background:#fff; " >
-<input id="owa_scrool_speed" placeholder="1" value="1" type="text" style="width: 20%;display: inline-block;height: 25px;"> 
-<input id="owa_frequency" placeholder="230" value="230" type="text" style="width: 20%;display: inline-block;">  
-<input onchange="owa_fontsize(this)" placeholder="40" value="40" type="text" style="width: 20%;display: inline-block;"> 
- <input value="flip Text" type="button" style="width: 20%;display: inline-block;" onclick="flipstyle()" >     
-</div>
-    
-<div class="owa_script" ><textarea class="owa_script owa_script_scrool" id="owa_script_scrool" style="margin-left: 25px;" > Past Your Script here...  </textarea >  </div>
-    
-
-
-
-<audio id="microphone" autoplay></audio>
-<div class="wrap">
-  <canvas id="canvas" width="1000" height="350"></canvas>
-</div>
-
 </body>
 </html>
