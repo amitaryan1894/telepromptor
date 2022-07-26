@@ -11,17 +11,17 @@
 <style>
 html, body{ width: 100%; height: 100%; padding: 0; margin: 0; background-color:#000; font-size: 0; } h1{    width: 100%;font-family: sans-serif;text-align: center;color: white;font-size: 18px;padding: 10px 0px;margin: 0;background-color: #490707;} h1 a{color: #fff;text-decoration:none;} .owa_script{ color: #fff; display: block; width: -webkit-fill-available; height: 100%;padding: 0;margin: 0;position: relative;font-size: 40px;background: #000;} .flipclass{   -moz-transform: scale(1, -1); -webkit-transform: scale(1, -1); -o-transform: scale(1, -1); -ms-transform: scale(1, -1); transform: scale(-1, 1);} #canvas {display: block;margin: 20px auto 0 auto;border-bottom: 2px solid #9C27B0;display: none;}
 
-/* footer class - this script developed by amit aryan raniganj araria my youtube channel is owaschhool */
+/* footer class */
 .dashFooterBox {position: fixed;bottom: 0;left: 0;right: 0;margin: 0 auto;} .dashFooterBoxInner {position: relative;} .dashFooterBtn {position: absolute;left: 10px;top: 0;z-index: 9;} .dashFooter {background: #333333;padding: 10px 0px;position: absolute;bottom: 0;z-index: 8;width: 100%;}
-/* hide footer until checkbox is checked - this script developed by amit aryan raniganj araria my youtube channel is owaschhool */
+/* hide footer until checkbox is checked */
 .dashFooterBtn label {background: #1b0cb6;border-top: 1px solid #424242;border-left: 1px solid #424242;border-right: 1px solid #424242;color: #ffffff;cursor: pointer;display: inline-block;padding: 12px 20px;-webkit-border-radius: 3px 3px 0px 0px;-moz-border-radius: 3px 3px 0px 0px;border-radius: 3px 3px 0px 0px;font-size: 13px;} .dashFooter {opacity: 0;visibility: hidden;-webkit-transition: all 0.25s;-moz-transition: all 0.25s;-ms-transition: all 0.25s;-o-transition: all 0.25s;transition: all 0.25s;} .r-foot-check {display: none;} input.r-foot-check:checked + .dashFooter {opacity: 1;visibility: visible;-webkit-transition: all 0.25s;-moz-transition: all 0.25s;-ms-transition: all 0.25s;-o-transition: all 0.25s;transition: all 0.25s;} ul{padding: 0;margin: 0;}
 
-/* input number box class - this script developed by amit aryan raniganj araria my youtube channel is owaschhool */
+/* input number box class */
 input[type=url] { font-family: "Nunito", sans-serif; background: #fff; border-style: solid; border-width: 1px; padding: 1em 1.5em; width: 100%; } .quantities {    display: flex; grid-template-columns: 1fr 16px 1fr; grid-gap: 0 1em; align-items: center; text-align: center; } .input-number { position: relative; width: 20%; padding: 0px 8px; } .input-number:before { color: rgb(255 255 255); position: absolute; top: -10px; left: 7px; font-size: 13px; pointer-events: none; padding: 2px 20px; background: #f00d0d; border-radius: 30px;} .owafontsize:before{content: "Font Size"; }.owanoice:before{content: "Noice"; }.owaspeed:before{content: "Speed"; } input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } input[type=number] { -moz-appearance: textfield; } input[type=number]::placeholder { color: #000; opacity: 0.5 !important; } .input-number input { width: 100%; height: 41px; line-height: 1.65; float: left; display: block;  margin: 0;  border: 1px solid #eee; font-family: "Nunito", sans-serif; text-align: center;} .input-number:focus { outline: 0; } .quantity-nav { float: left; position: relative; height: 44px; } .quantity-button {position: relative; cursor: pointer; border-left: 1px solid #eee; width: 25px; text-align: center; color: #ffffff; font-size: 16px; font-family: "Nunito", sans-serif; line-height: 1.7; -webkit-transform: translateX(-100%); transform: translateX(-100%); -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; background: #490707; } .quantity-button.quantity-up { position: absolute; height: 50%; top: 0; border-bottom: 1px solid #eee; } .quantity-button.quantity-down { position: absolute; bottom: -1px; height: 50%; } .amitaryan{position: relative; width: 20%; padding: 0px 8px; } .amitaryan input{      width: 100%; cursor: pointer; height: 46px; line-height: 1.65; float: left; display: block; margin: 0; border: 1px solid #212121; font-family: "Nunito", sans-serif; text-align: center; background: #490707; color: white;}
 </style>
 
 <h1><div class="dashFooterBtn"><label for="show-foot">Settings</label></div><a href="https://www.youtube.com/owaschool">How to use this Telemproptor Software click here to watch  </a></h1>
-<div class="owa_script" ><textarea class="owa_script owa_script_scrool" id="owa_script_scrool" style="margin-left: 25px;" > This is a Voice Controled Telepromptor. enter your text or past your text Script  here...  and read your script </textarea >  </div>
+<div class="owa_script" ><textarea class="owa_script owa_script_scrool" id="owa_script_scrool" style="margin-left: 25px;" > This is a voice controlled teleprompter software. Here you type your text script or paste your text! It will automatically scroll up as you read the script!  </textarea >  </div>
 
 
 <footer class="dashFooterBox">
@@ -34,7 +34,7 @@ input[type=url] { font-family: "Nunito", sans-serif; background: #fff; border-st
               
               <div class="quantities">
                 <div class="amitaryan ">
-                  <input type="file" onchange="readURL(this, 'owa_script_scrool');"  >
+                  <input type="file"  onchange="openFile(event, 'owa_script_scrool')">
                 </div>
                  <div class="input-number owafontsize">
                   <input  onchange="owa_fontsize(this)"  placeholder="Width" type="number" min="1" max=500 step="any" value="40">
@@ -73,12 +73,221 @@ input[type=url] { font-family: "Nunito", sans-serif; background: #fff; border-st
     
     
     
-    
+<script src="./docxtemplater.js"></script>
+<script src="./jszip.js"></script>
     
     
 
 <script>
-function owa_fontsize(a){document.getElementById("owa_script_scrool").style.fontSize=a.value+"px"}jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter(".input-number input"),jQuery(".input-number").each(function(){var a=jQuery(this),b=a.find('input[type="number"]'),c=a.find(".quantity-up"),d=a.find(".quantity-down"),e=b.attr("min"),f=b.attr("max");c.click(function(){var c=parseFloat(b.val());if(c>=f)var d=c;else var d=c+1;a.find("input").val(d),a.find("input").trigger("change")}),d.click(function(){var c=parseFloat(b.val());if(c<=e)var d=c;else var d=c-1;a.find("input").val(d),a.find("input").trigger("change")})});var video=document.createElement("video");function addSourceToVideo(b,c,d){var a=document.createElement("source");a.src=d,a.type="video/"+c,b.appendChild(a)}video.setAttribute("loop",""),video.setAttribute("style","position: fixed;");var base64=function(a,b){return"data:"+a+";base64,"+b};addSourceToVideo(video,"webm",base64("video/webm","GkXfo0AgQoaBAUL3gQFC8oEEQvOBCEKCQAR3ZWJtQoeBAkKFgQIYU4BnQI0VSalmQCgq17FAAw9CQE2AQAZ3aGFtbXlXQUAGd2hhbW15RIlACECPQAAAAAAAFlSua0AxrkAu14EBY8WBAZyBACK1nEADdW5khkAFVl9WUDglhohAA1ZQOIOBAeBABrCBCLqBCB9DtnVAIueBAKNAHIEAAIAwAQCdASoIAAgAAUAmJaQAA3AA/vz0AAA=")),addSourceToVideo(video,"mp4",base64("video/mp4","AAAAHGZ0eXBpc29tAAACAGlzb21pc28ybXA0MQAAAAhmcmVlAAAAG21kYXQAAAGzABAHAAABthADAowdbb9/AAAC6W1vb3YAAABsbXZoZAAAAAB8JbCAfCWwgAAAA+gAAAAAAAEAAAEAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAIVdHJhawAAAFx0a2hkAAAAD3wlsIB8JbCAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAIAAAACAAAAAABsW1kaWEAAAAgbWRoZAAAAAB8JbCAfCWwgAAAA+gAAAAAVcQAAAAAAC1oZGxyAAAAAAAAAAB2aWRlAAAAAAAAAAAAAAAAVmlkZW9IYW5kbGVyAAAAAVxtaW5mAAAAFHZtaGQAAAABAAAAAAAAAAAAAAAkZGluZgAAABxkcmVmAAAAAAAAAAEAAAAMdXJsIAAAAAEAAAEcc3RibAAAALhzdHNkAAAAAAAAAAEAAACobXA0dgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAIAAgASAAAAEgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABj//wAAAFJlc2RzAAAAAANEAAEABDwgEQAAAAADDUAAAAAABS0AAAGwAQAAAbWJEwAAAQAAAAEgAMSNiB9FAEQBFGMAAAGyTGF2YzUyLjg3LjQGAQIAAAAYc3R0cwAAAAAAAAABAAAAAQAAAAAAAAAcc3RzYwAAAAAAAAABAAAAAQAAAAEAAAABAAAAFHN0c3oAAAAAAAAAEwAAAAEAAAAUc3RjbwAAAAAAAAABAAAALAAAAGB1ZHRhAAAAWG1ldGEAAAAAAAAAIWhkbHIAAAAAAAAAAG1kaXJhcHBsAAAAAAAAAAAAAAAAK2lsc3QAAAAjqXRvbwAAABtkYXRhAAAAAQAAAABMYXZmNTIuNzguMw==")),document.body.appendChild(video);var playFn=function(){video.play(),document.body.removeEventListener("touchend",playFn)};function readURL(a,c){if(a.files&&a.files[0]){var b=new FileReader;b.onload=function(a){document.getElementById(c).value=a.target.result},input_owaschool=a.files[0],b.readAsText(input_owaschool)}}function flipstyle(){$("#owa_script_scrool").toggleClass("flipclass");var a=$("#owa_script_scrool").val().replace(/\n/g,"");$("#owa_script_scrool").val(a)}document.body.addEventListener("touchend",playFn);var canvas=document.getElementById("canvas");function startRecord(b){alert("Welcome to Owaschool Telepromptor Software. This Program Developed by owaschool youtube channel team.");var a=navigator.mediaDevices.getUserMedia({audio:!0,video:!1});a.then(function(a){audioContext=window.AudioContext||window.webkitAudioContext||window.mozAudioContext||window.msAudioContext;try{context=new audioContext}catch(e){console.log("not support AudioContext")}audioInput=context.createMediaStreamSource(a);var b=[];b.push(a),microphone.src=window.URL.createObjectURL(new Blob(b,{type:"application/zip"})),microphone.onloadedmetadata=function(a){};var d=context.createAnalyser();audioInput.connect(d),c(d)}),a.catch(function(a){tip.innerHTML=a.name});var c=function(d){console.log(new Uint8Array(d.frequencyBinCount));var b=document.getElementById("canvas"),g=b.width,e=b.height,c=b.getContext("2d"),a=c.createLinearGradient(0,0,0,e);a.addColorStop(1,"#a467af"),a.addColorStop(.3,"#ff0"),a.addColorStop(0,"#f00"),c.fillStyle=a;var f=function(){var b=new Uint8Array(d.frequencyBinCount);d.getByteFrequencyData(b);var i=Math.round(b.length/250);c.clearRect(0,0,g,e);for(var a=0;a<250;a++){var h=b[a*i];c.fillRect(6*a,e-h,5,e);var j=document.getElementById("owa_scrool_speed").value,k=document.getElementById("owa_frequency").value;if(h>parseInt(k)){$("#owa_script_scrool").scrollTop($("#owa_script_scrool").scrollTop()+parseInt(j));break}}setTimeout(function(){requestAnimationFrame(f)},30)};requestAnimationFrame(f)}}navigator.mediaDevices=navigator.mediaDevices||(navigator.mozGetUserMedia||navigator.webkitGetUserMedia?{getUserMedia:function(a){return new Promise(function(b,c){(navigator.mozGetUserMedia||navigator.webkitGetUserMedia).call(navigator,a,b,c)})}}:null),navigator.mediaDevices.getUserMedia||(tip.innerHTML="your browser does not have mediastream support"),startRecord()
+
+
+// Number Input Controls
+jQuery(
+    '<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>'
+  ).insertAfter(".input-number input");
+  jQuery(".input-number").each(function () {
+    var spinner = jQuery(this),
+      input = spinner.find('input[type="number"]'),
+      btnUp = spinner.find(".quantity-up"),
+      btnDown = spinner.find(".quantity-down"),
+      min = input.attr("min"),
+      max = input.attr("max");
+  
+    btnUp.click(function () {
+      var oldValue = parseFloat(input.val());
+      if (oldValue >= max) {
+        var newVal = oldValue;
+      } else {
+        var newVal = oldValue + 1;
+      }
+      spinner.find("input").val(newVal);
+      spinner.find("input").trigger("change");
+    });
+  
+    btnDown.click(function () {
+      var oldValue = parseFloat(input.val());
+      if (oldValue <= min) {
+        var newVal = oldValue;
+      } else {
+        var newVal = oldValue - 1;
+      }
+      spinner.find("input").val(newVal);
+      spinner.find("input").trigger("change");
+    });
+  });
+
+  function owa_fontsize(fontsize){
+    document.getElementById("owa_script_scrool").style.fontSize= fontsize.value+ "px";
+}
+
+
+
+
+
+
+
+
+
+
+// Create the root video element
+var video = document.createElement('video');
+video.setAttribute('loop', '');
+// Add some styles if needed
+video.setAttribute('style', 'position: fixed;');
+// A helper to add sources to video
+function addSourceToVideo(element, type, dataURI) {
+    var source = document.createElement('source');
+    source.src = dataURI;
+    source.type = 'video/' + type;
+    element.appendChild(source);
+}
+// A helper to concat base64
+var base64 = function(mimeType, base64) {
+    return 'data:' + mimeType + ';base64,' + base64;
+};
+// Add Fake sourced
+addSourceToVideo(video,'webm', base64('video/webm', 'GkXfo0AgQoaBAUL3gQFC8oEEQvOBCEKCQAR3ZWJtQoeBAkKFgQIYU4BnQI0VSalmQCgq17FAAw9CQE2AQAZ3aGFtbXlXQUAGd2hhbW15RIlACECPQAAAAAAAFlSua0AxrkAu14EBY8WBAZyBACK1nEADdW5khkAFVl9WUDglhohAA1ZQOIOBAeBABrCBCLqBCB9DtnVAIueBAKNAHIEAAIAwAQCdASoIAAgAAUAmJaQAA3AA/vz0AAA='));
+addSourceToVideo(video, 'mp4', base64('video/mp4', 'AAAAHGZ0eXBpc29tAAACAGlzb21pc28ybXA0MQAAAAhmcmVlAAAAG21kYXQAAAGzABAHAAABthADAowdbb9/AAAC6W1vb3YAAABsbXZoZAAAAAB8JbCAfCWwgAAAA+gAAAAAAAEAAAEAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAIVdHJhawAAAFx0a2hkAAAAD3wlsIB8JbCAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAIAAAACAAAAAABsW1kaWEAAAAgbWRoZAAAAAB8JbCAfCWwgAAAA+gAAAAAVcQAAAAAAC1oZGxyAAAAAAAAAAB2aWRlAAAAAAAAAAAAAAAAVmlkZW9IYW5kbGVyAAAAAVxtaW5mAAAAFHZtaGQAAAABAAAAAAAAAAAAAAAkZGluZgAAABxkcmVmAAAAAAAAAAEAAAAMdXJsIAAAAAEAAAEcc3RibAAAALhzdHNkAAAAAAAAAAEAAACobXA0dgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAIAAgASAAAAEgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABj//wAAAFJlc2RzAAAAAANEAAEABDwgEQAAAAADDUAAAAAABS0AAAGwAQAAAbWJEwAAAQAAAAEgAMSNiB9FAEQBFGMAAAGyTGF2YzUyLjg3LjQGAQIAAAAYc3R0cwAAAAAAAAABAAAAAQAAAAAAAAAcc3RzYwAAAAAAAAABAAAAAQAAAAEAAAABAAAAFHN0c3oAAAAAAAAAEwAAAAEAAAAUc3RjbwAAAAAAAAABAAAALAAAAGB1ZHRhAAAAWG1ldGEAAAAAAAAAIWhkbHIAAAAAAAAAAG1kaXJhcHBsAAAAAAAAAAAAAAAAK2lsc3QAAAAjqXRvbwAAABtkYXRhAAAAAQAAAABMYXZmNTIuNzguMw=='));
+// Append the video to where ever you need
+document.body.appendChild(video);
+// Start playing video after any user interaction.
+// NOTE: Running video.play() handler without a user action may be blocked by browser.
+var playFn = function() {
+    video.play();
+    document.body.removeEventListener('touchend', playFn);
+};
+document.body.addEventListener('touchend', playFn);
+
+
+
+
+var openFile = function(event, scriptarea) {
+  var input = event.target;
+  var reader = new FileReader();
+
+  var validExt = [ 'txt', 'TXT'];
+  var ext = input.files[0].name.split('.').pop();
+
+if (validExt.indexOf(ext.toLowerCase()) == -1) {
+  reader.onload = function() {
+    var zip = new JSZip(reader.result);
+    var doc = new window.docxtemplater().loadZip(zip);
+    var text = doc.getFullText();
+    var node = document.getElementById(scriptarea);
+    node.innerText = text;
+  };
+  reader.readAsBinaryString(input.files[0]);
+}
+else {
+  reader.onload = function (e) {
+var textArea = document.getElementById(scriptarea);
+textArea.value = e.target.result;
+};  
+reader.readAsText(input.files[0]);
+}
+};
+
+
+// flip script
+function flipstyle(){
+    $("#owa_script_scrool").toggleClass('flipclass');
+    var msg = $("#owa_script_scrool").val().replace(/\n/g, "");
+    $("#owa_script_scrool").val(msg);
+}
+
+
+
+
+
+var canvas = document.getElementById('canvas');
+navigator.mediaDevices = navigator.mediaDevices || ((navigator.mozGetUserMedia || navigator.webkitGetUserMedia) ? {
+  getUserMedia: function (c) {
+    return new Promise(function (y, n) {
+      (navigator.mozGetUserMedia ||
+        navigator.webkitGetUserMedia).call(navigator, c, y, n);
+    });
+  }
+} : null);
+
+if (!navigator.mediaDevices.getUserMedia) {
+  tip.innerHTML = 'your browser does not have mediastream support';
+}
+
+function startRecord(e) {
+  var record = navigator.mediaDevices.getUserMedia({
+    audio: true,
+    video: false
+  });
+  record.then(function onSuccess(stream) {
+      
+    audioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext;
+    try {
+      context = new audioContext();
+    } catch (e) {
+      console.log('not support AudioContext');
+    }
+
+    audioInput = context.createMediaStreamSource(stream);
+    var binaryData = [];
+    binaryData.push(stream);
+    microphone.src = window.URL.createObjectURL(new Blob(binaryData, { type: 'application/zip' }));
+    microphone.onloadedmetadata = function (e) { };
+    var analyser = context.createAnalyser();
+    audioInput.connect(analyser);
+
+    drawSpectrum(analyser);
+      
+  });
+  record.catch(function (e) {
+    tip.innerHTML = e.name; 
+  });
+  var drawSpectrum = function (analyser) {
+      
+
+      
+    console.log(new Uint8Array(analyser.frequencyBinCount));
+    var canvas = document.getElementById('canvas'),
+    cwidth = canvas.width,
+    cheight = canvas.height,
+    meterWidth = 5,
+    gap = 1,
+    meterNum = 250,
+    ctx = canvas.getContext('2d'),
+    gradient = ctx.createLinearGradient(0, 0, 0, cheight);
+    gradient.addColorStop(1, '#a467af');
+    gradient.addColorStop(0.3, '#ff0');
+    gradient.addColorStop(0, '#f00');
+    ctx.fillStyle = gradient;
+
+    var drawMeter = function () {
+      var array = new Uint8Array(analyser.frequencyBinCount);
+      analyser.getByteFrequencyData(array);
+
+      var step = Math.round(array.length / meterNum);
+      ctx.clearRect(0, 0, cwidth, cheight);
+      
+      for (var i = 0; i < meterNum; i++) {
+   
+          var value = array[i * step];
+          var gggg = ctx.fillRect(i * (meterWidth + gap), cheight - value, meterWidth, cheight);
+          var owa_scrlsp = document.getElementById('owa_scrool_speed').value;
+          var owa_frequency = document.getElementById('owa_frequency').value;  
+if(value > parseInt(owa_frequency)){
+    $("#owa_script_scrool").scrollTop($("#owa_script_scrool").scrollTop() + parseInt(owa_scrlsp)); 
+    break;
+}
+      }   
+      
+   setTimeout(function(){
+      requestAnimationFrame(drawMeter);
+  }, 30);   
+
+    }
+    requestAnimationFrame(drawMeter);
+  }
+}
+
+startRecord();
 </script>
 </body>
 </html>
