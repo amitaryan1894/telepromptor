@@ -56,7 +56,7 @@ color: white;
 		const txnid = urlParams.get('txnid');
 		const amount = urlParams.get('amount');
 
-    const PAY_URL = "upi://pay?cu=INR&pa=amitaryan1894@pnb&pn=Amit%20kumar%20&am="+amount+"&tn="+txnid+"&url=https://technlabs.com";
+    const PAY_URL = "intent://upi://pay?cu=INR&pa=amitaryan1894@pnb&pn=Amit%20kumar%20&am="+amount+"&tn="+txnid+"&url=https://technlabs.com";
     document.querySelector('#replace').setAttribute('href', PAY_URL);
 
 	</script>
