@@ -1,0 +1,52 @@
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js">
+</script>
+
+<script>let model;
+
+  async function setupModel(URL, predictionCB) {
+     //store the prediction and audio callback functions
+     predictionCallback = predictionCB;
+  
+     const modelURL = 'model.json';
+     const metadataURL = 'metadata.json';
+     model = window.speechCommands.create('BROWSER_FFT', undefined, modelURL, metadataURL);
+     await model.ensureModelLoaded();
+  
+     const modelParameters = {
+         invokeCallbackOnNoiseAndUnknown: true, // run even when only background noise is detected
+         includeSpectrogram: true, // give us access to numerical audio data
+         overlapFactor: 0.5 // how often per second to sample audio, 0.5 means twice per second
+     };
+  
+     model.listen(
+         //This callback function is invoked each time the model has a prediction.
+         prediction => {
+             predictionCallback(prediction.scores);
+         },
+         modelParameters
+     );
+  }
+  let labels = ["Clapping","Speaking","_background_noise_"];
+
+setupModel(URL, data => {
+     // data will look like this [0.87689, 0.21456, 0.56789]
+      switch(Math.max(...data)){
+               case data[0]:
+                   currentPrediction = labels[0];
+                   break;
+               case data[1]:
+                   currentPrediction = labels[1];
+                   break;
+               default:
+                   currentPrediction = "";
+                   break;
+           }
+       }
+        return currentPrediction;
+});
+  
+  
+  </script>
