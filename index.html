@@ -795,6 +795,25 @@
 
   </script>
 
+
+      <script>
+        // Prevent sleep using requestAnimationFrame
+        function keepAwake() {
+            if ('requestAnimationFrame' in window) {
+                function update() {
+                    requestAnimationFrame(update);
+                }
+                requestAnimationFrame(update);
+            }
+        }
+
+        // Uncomment the line below if using the Wake Lock API
+        // navigator.wakeLock.request('screen');
+
+        // Call the function to keep the device awake
+        keepAwake();
+      </script>
+
   <script src="jquery.cookie.js"></script>
 </body>
 
