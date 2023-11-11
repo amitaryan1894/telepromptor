@@ -7,7 +7,19 @@
   <title>Amit Solutions Telepropter </title>
   <script src="./jquery-3.5.0.js"></script>
 </head>
+    <script>
+        async function requestWakeLock() {
+            try {
+                const wakeLock = await navigator.wakeLock.request('screen');
+                console.log('Screen wake lock is active:', wakeLock.isActive);
+            } catch (error) {
+                console.error('Error requesting wake lock:', error);
+            }
+        }
 
+        // Call the function to request the wake lock
+        requestWakeLock();
+    </script>
 <body>
   <style>
     *,
@@ -813,6 +825,8 @@
         // Call the function to keep the device awake
         keepAwake();
       </script>
+
+      
 
   <script src="jquery.cookie.js"></script>
 </body>
