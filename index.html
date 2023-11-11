@@ -1,334 +1,800 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amit Solutions Telepropter </title>
-<script src="./jquery-3.5.0.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amit Solutions Telepropter </title>
+  <script src="./jquery-3.5.0.js"></script>
 </head>
+
 <body>
-    <style>
-*, ::after, ::before {box-sizing: border-box;} html, body{ width: 100%; height: 100%; padding: 0; margin: 0; background-color:#3d3cdc; font-size: 0; } .row{position: fixed;
-    width: 100%;display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap; height: 100%; } .owa_script {color: #fff;padding: 0;margin: 0;height: 100%;} .owa_settings {color: #fff;padding: 0;margin: 0;background: #3d3cdc;height: 100%;flex: auto;} .owa_script_scrool{width: 100%;height: 100%;font-size: 50px;    background: #000;color: #fff; } /****** choose file custom ******/ .file-upload{display:block;text-align:center;font-family: Helvetica, Arial, sans-serif;font-size: 12px;    padding: 7px;} .file-upload .file-select{display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;} .file-upload .file-select .file-select-button{background:#dce4ec;padding:0 10px;display:inline-block;height:40px;line-height:40px;} .file-upload .file-select .file-select-name{line-height:40px;display:inline-block;padding:0 10px;} .file-upload .file-select:hover{border-color:#34495e;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;} .file-upload .file-select:hover .file-select-button{background:#34495e;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;} .file-upload.active .file-select{border-color:#3fa46a;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;} .file-upload.active .file-select .file-select-button{background:#3fa46a;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;} .file-upload .file-select input[type=file]{z-index:100;cursor:pointer;position:absolute;height:100%;width:100%;top:0;left:0;opacity:0;filter:alpha(opacity=0);} .file-upload .file-select.file-select-disabled{opacity:0.65;} .file-upload .file-select.file-select-disabled:hover{cursor:default;display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;margin-top:5px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;} .file-upload .file-select.file-select-disabled:hover .file-select-button{background:#dce4ec;color:#666666;padding:0 10px;display:inline-block;height:40px;line-height:40px;} .file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;} .flipclass{   -moz-transform: scale(1, -1); -webkit-transform: scale(1, -1); -o-transform: scale(1, -1); -ms-transform: scale(1, -1); transform: scale(-1, 1);} .box { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-box-shadow: 0 1px 15px rgb(0 0 0 / 10%); box-shadow: 0 1px 15px 2px rgb(0 0 0 / 10%); border-radius: 5px; } .heading{ text-align: center; color: #000; font-size: 15px; margin: 0; padding: 0; } .wrap { margin: 7px; background: #dce4ec; border-radius: 7.5px; padding: 5px 0px 5px 0px; } input[type=range] { -webkit-appearance: none; width: 100%; background: #dce4ec; } input[type=range]:focus { outline: none; } input[type=range]:focus::-webkit-slider-runnable-track { opacity: 0.8; } input[type=range]:focus::-ms-fill-lower { opacity: 0.8; } input[type=range]:focus::-ms-fill-upper { opacity: 0.8; } input[type=range]::-webkit-slider-runnable-track { background-color: #dddddd; border-radius: 5px; cursor: pointer; height: 5px; width: 100%; margin: 10px 0; } input[type=range]::-moz-range-track { background-color: #dddddd; border-radius: 5px; cursor: pointer; height: 5px; width: 100%; margin: 10px 0; } input[type=range]::-webkit-slider-thumb { background-color: #FF8080; border-radius: 100%; cursor: pointer; height: 15px; width: 15px; -webkit-appearance: none; margin-top: -5px; } input[type=range]::-moz-range-thumb { background-color: #FF8080; border-radius: 100%; cursor: pointer; height: 15px; width: 15px; } input[type=range]::-ms-thumb { background-color: #FF8080; border-radius: 100%; cursor: pointer; height: 15px; width: 15px; } input[type=range]::-ms-track { background-color: #dddddd; border-radius: 5px; cursor: pointer; height: 5px; width: 100%; margin: 10px 0; background-color: transparent; border-color: transparent; color: transparent; } input[type=range]::-ms-fill-lower { background-color: #dddddd; border-radius: 3px; } input[type=range]::-ms-fill-upper { background-color: #dddddd; border-radius: 3px; } .is-rangeInput { position: relative; padding: 7px; } .range__label { font-size: 11px; color: #ffffff; border: 1px solid #ffffff; border-radius: 5px; padding: 3px 10px; position: absolute; background: #3d3cdc; font-weight: 600; bottom: 30px; margin-left: 10px; } .hidee{display: none;} ._fliiip{ width: 100%; cursor: pointer; height: 46px; line-height: 1.65; display: block; margin: 0; border: 1px solid #212121; font-family: "Nunito", sans-serif; text-align: center; background: #490707; color: white; } .pd15{    padding: 15px;} .nightmode.owa_settings{background-color: #000;} .high {
-    height: 100%;
-    overflow: hidden;
-    overflow-y: scroll;
-} .menu_icn { width: 100%; position: relative; display: none; } .wrapper { display: inline-block; vertical-align: middle; right: auto; left: auto; margin: 10px auto; width: 100%; }.burger { display: block; position: relative; width: 80px; height: 80px; margin: auto; border: 0; border-radius: 4px; background-color: #ffffff; box-shadow: 0 0 30px -5px rgb(51 51 51 / 20%); cursor: pointer; transition: all 0.25s ease; overflow: hidden; outline: none; }.burgerIngredient { display: block; position: absolute; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 4px; border-radius: 4px; background-color: #333333; transition: all 0.25s ease; transform-origin: left; opacity: 1; }.burgerIngredient.-topBun { top: 30px; }.burgerIngredient.-patty { top: 40px; left: auto; right: 50%; transform-origin: right; transform: translate(0, -50%); width: 40px; margin-right: -20px; }.burgerIngredient.-bottomBun { top: 50px; } @media only screen and (max-width: 750px) { .menu_icn { display: block; } .sidebar{ display: none; } .sidebar.open{position: absolute; display: block; width: 300px; top: 0; bottom: 0; padding: 1em; background-color: #3d3cdc; color: white; height: 100%; left: 0; } .owa_settings{background-color: #000;} }
-._remot{
-  padding: 10px;
-}
-._remot a{
-  font-size: 18px;
-    background: #dce4ec;
-    border-radius: 7.5px;
-    padding: 5px 10px 5px 10px;
-    text-decoration: none;
-}
-.sidebar{height: 100%;}
-</style>
-
-<div class="row">
-<div class="owa_script " ><textarea class="owa_script_scrool" id="owa_script_scrool" >   this is a voice activated telepromptor </textarea > </div>
-
-
-<div class="owa_settings" > 
-    
-    <div class="menu_icn">
-        <div class="wrapper">
-            <button class="burger"  onclick="sidemenu()">
-              <span class="burgerIngredient -topBun"></span>
-              <span class="burgerIngredient -patty"></span>
-              <span class="burgerIngredient -bottomBun"></span>
-            </button>
-          </div>
-      </div>
-      <div class="sidebar">
-    <div class="high">
-
-    <div class="file-upload">
-        <div class="file-select">
-          <div class="file-select-button" id="fileName">Choose File</div>
-          <div class="file-select-name" id="noFile">No file chosen...</div> 
-          <input type="file" name="chooseFile" id="chooseFile" onchange="openFile(event, 'owa_script_scrool')">
-        </div>
-      </div>
-
-      <div class="wrap">
-        <h1 class="heading">Font Size</h1>
-        <div class="is-rangeInput">
-            <output id="output1" class="range__label" for="val1">0</output>
-            <input type="range" id="val1" name="font_size" min="5" max="100" step="1" value="45">
-        </div>
-      </div>
-
-      <div class="wrap">
-        <h1 class="heading">Noice / Voice Level</h1>
-        <div class="is-rangeInput">
-            <output id="output2" class="range__label" for="owa_frequency">0</output>
-            <input type="range" id="owa_frequency" name="Noice_level" min="3" max="1000" step="1" value="150">
-        </div>
-      </div>
-
-      <div class="wrap">
-        <h1 class="heading">Script Speed</h1>
-        <div class="is-rangeInput">
-            <output id="output2" class="range__label" for="owa_scrool_speed">0</output>
-            <input type="range" id="owa_scrool_speed" name="Noice_level" min="1" max="60" step="1" value="1">
-        </div>
-      </div>
-
-      <div class="wrap pd15">
-       <input class="_fliiip box" value="Save Script" type="button" onclick="save_script()" >  
-      </div>
-
-      <div class="wrap pd15">
-        <input class="_fliiip box" value="flip Text" type="button" onclick="flipstyle()" >  
-       </div>
-       
-<div class="_remot"><a href="https://remotedesktop.google.com/">remote Desktop</a></div>
-
-</div></div>
-</div>
-
-
-
-</div>
-
-
-<audio id="microphone" autoplay></audio>
-<div class="wrap hidee">
-  <canvas id="canvas" width="1000" height="350"></canvas>
-</div>
-
-
-
-
-<script src="./docxtemplater.js"></script>
-<script src="./jszip.js"></script>
-<script>
-
-
-
-
-
-
- // choose file custom
-$('#chooseFile').bind('change', function () {
-  var filename = $("#chooseFile").val();
-  if (/^\s*$/.test(filename)) {
-    $(".file-upload").removeClass('active');
-    $("#noFile").text("No file chosen..."); 
-  }
-  else {
-    $(".file-upload").addClass('active');
-    $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
-  }
-});
-
-
-
-// load chosed file
-var openFile = function(event, scriptarea) {
-  var input = event.target;
-  var reader = new FileReader();
-
-  var validExt = [ 'txt', 'TXT'];
-  var ext = input.files[0].name.split('.').pop();
-
-if (validExt.indexOf(ext.toLowerCase()) == -1) {
-  reader.onload = function() {
-    var zip = new JSZip(reader.result);
-    var doc = new window.docxtemplater().loadZip(zip);
-    var text = doc.getFullText();
-    var node = document.getElementById(scriptarea);
-    node.innerText = text;
-  };
-  reader.readAsBinaryString(input.files[0]);
-}
-else {
-  reader.onload = function (e) {
-var textArea = document.getElementById(scriptarea);
-textArea.value = e.target.result;
-};  
-reader.readAsText(input.files[0]);
-}
-};
-
-
-
-
-// number range cotrol
-$(function() {
-    var rangeInputs = $('input[type="range"]');
-
-    for (i = 0; i < rangeInputs.length; i++) {
-        updateRangeValue(rangeInputs[i]);        
-        updateRangeLabel(rangeInputs[i]);
+  <style>
+    *,
+    ::after,
+    ::before {
+      box-sizing: border-box;
     }
 
-    rangeInputs.on('input change', function(){
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      background-color: #3d3cdc;
+      font-size: 0;
+    }
+
+    .row {
+      position: fixed;
+      width: 100%;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      height: 100%;
+    }
+
+    .owa_script {
+      color: #fff;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+    }
+
+    .owa_settings {
+      color: #fff;
+      padding: 0;
+      margin: 0;
+      background: #3d3cdc;
+      height: 100%;
+      flex: auto;
+    }
+
+    .owa_script_scrool {
+      width: 100%;
+      height: 100%;
+      font-size: 50px;
+      background: #000;
+      color: #fff;
+    }
+
+    /****** choose file custom ******/
+    .file-upload {
+      display: block;
+      text-align: center;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      padding: 7px;
+    }
+
+    .file-upload .file-select {
+      display: block;
+      border: 2px solid #dce4ec;
+      color: #34495e;
+      cursor: pointer;
+      height: 40px;
+      line-height: 40px;
+      text-align: left;
+      background: #FFFFFF;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .file-upload .file-select .file-select-button {
+      background: #dce4ec;
+      padding: 0 10px;
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .file-upload .file-select .file-select-name {
+      line-height: 40px;
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    .file-upload .file-select:hover {
+      border-color: #34495e;
+      transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      -webkit-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+    }
+
+    .file-upload .file-select:hover .file-select-button {
+      background: #34495e;
+      color: #FFFFFF;
+      transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      -webkit-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+    }
+
+    .file-upload.active .file-select {
+      border-color: #3fa46a;
+      transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      -webkit-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+    }
+
+    .file-upload.active .file-select .file-select-button {
+      background: #3fa46a;
+      color: #FFFFFF;
+      transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      -webkit-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+    }
+
+    .file-upload .file-select input[type=file] {
+      z-index: 100;
+      cursor: pointer;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+
+    .file-upload .file-select.file-select-disabled {
+      opacity: 0.65;
+    }
+
+    .file-upload .file-select.file-select-disabled:hover {
+      cursor: default;
+      display: block;
+      border: 2px solid #dce4ec;
+      color: #34495e;
+      cursor: pointer;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 5px;
+      text-align: left;
+      background: #FFFFFF;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .file-upload .file-select.file-select-disabled:hover .file-select-button {
+      background: #dce4ec;
+      color: #666666;
+      padding: 0 10px;
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .file-upload .file-select.file-select-disabled:hover .file-select-name {
+      line-height: 40px;
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    .flipclass {
+      -moz-transform: scale(1, -1);
+      -webkit-transform: scale(1, -1);
+      -o-transform: scale(1, -1);
+      -ms-transform: scale(1, -1);
+      transform: scale(-1, 1);
+    }
+
+    .box {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-box-shadow: 0 1px 15px rgb(0 0 0 / 10%);
+      box-shadow: 0 1px 15px 2px rgb(0 0 0 / 10%);
+      border-radius: 5px;
+    }
+
+    .heading {
+      text-align: center;
+      color: #000;
+      font-size: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrap {
+      margin: 7px;
+      background: #dce4ec;
+      border-radius: 7.5px;
+      padding: 5px 0px 5px 0px;
+    }
+
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      background: #dce4ec;
+    }
+
+    input[type=range]:focus {
+      outline: none;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+      opacity: 0.8;
+    }
+
+    input[type=range]:focus::-ms-fill-lower {
+      opacity: 0.8;
+    }
+
+    input[type=range]:focus::-ms-fill-upper {
+      opacity: 0.8;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+      background-color: #dddddd;
+      border-radius: 5px;
+      cursor: pointer;
+      height: 5px;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    input[type=range]::-moz-range-track {
+      background-color: #dddddd;
+      border-radius: 5px;
+      cursor: pointer;
+      height: 5px;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      background-color: #FF8080;
+      border-radius: 100%;
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      -webkit-appearance: none;
+      margin-top: -5px;
+    }
+
+    input[type=range]::-moz-range-thumb {
+      background-color: #FF8080;
+      border-radius: 100%;
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+    }
+
+    input[type=range]::-ms-thumb {
+      background-color: #FF8080;
+      border-radius: 100%;
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+    }
+
+    input[type=range]::-ms-track {
+      background-color: #dddddd;
+      border-radius: 5px;
+      cursor: pointer;
+      height: 5px;
+      width: 100%;
+      margin: 10px 0;
+      background-color: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    input[type=range]::-ms-fill-lower {
+      background-color: #dddddd;
+      border-radius: 3px;
+    }
+
+    input[type=range]::-ms-fill-upper {
+      background-color: #dddddd;
+      border-radius: 3px;
+    }
+
+    .is-rangeInput {
+      position: relative;
+      padding: 7px;
+    }
+
+    .range__label {
+      font-size: 11px;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 5px;
+      padding: 3px 10px;
+      position: absolute;
+      background: #3d3cdc;
+      font-weight: 600;
+      bottom: 30px;
+      margin-left: 10px;
+    }
+
+    .hidee {
+      display: none;
+    }
+
+    ._fliiip {
+      width: 100%;
+      cursor: pointer;
+      height: 46px;
+      line-height: 1.65;
+      display: block;
+      margin: 0;
+      border: 1px solid #212121;
+      font-family: "Nunito", sans-serif;
+      text-align: center;
+      background: #490707;
+      color: white;
+    }
+
+    .pd15 {
+      padding: 15px;
+    }
+
+    .nightmode.owa_settings {
+      background-color: #000;
+    }
+
+    .high {
+      height: 100%;
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+
+    .menu_icn {
+      width: 100%;
+      position: relative;
+      display: none;
+    }
+
+    .wrapper {
+      display: inline-block;
+      vertical-align: middle;
+      right: auto;
+      left: auto;
+      margin: 10px auto;
+      width: 100%;
+    }
+
+    .burger {
+      display: block;
+    position: absolute;
+    width: 50px;
+    height: 48px;
+    margin: auto;
+    border: 0;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 0 30px -5px rgb(51 51 51 / 20%);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    overflow: hidden;
+    outline: none;
+    bottom: 15px;
+    right: 45px;
+    opacity: 0.2;
+}
+
+.burger:hover, .burger:focus{
+    opacity: 1;
+}
+
+
+
+    .burgerIngredient {
+      display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #333333;
+    transition: all 0.25s ease;
+    transform-origin: left;
+    opacity: 1;
+    }
+
+    .burgerIngredient.-topBun {
+      top: 12px;
+    }
+
+    .burgerIngredient.-patty {
+      top: 24px;
+    left: auto;
+    right: 50%;
+    transform-origin: right;
+    transform: translate(0, -50%);
+    width: 40px;
+    margin-right: -20px;
+    }
+
+    .burgerIngredient.-bottomBun {
+      top: 35px;
+    }
+
+    @media only screen and (max-width: 750px) {
+      .menu_icn {
+        display: block;
+      }
+
+      .owa_settings {
+        background-color: #000;
+      }
+    }
+
+    .sidebar.open {
+        position: absolute;
+        display: block;
+        width: 300px;
+        top: 0;
+        bottom: 0;
+        padding: 1em;
+        background-color: #3d3cdc;
+        color: white;
+        height: 100%;
+        left: 0;
+      }
+
+    ._remot {
+      padding: 10px;
+    }
+
+    ._remot a {
+      font-size: 18px;
+      background: #dce4ec;
+      border-radius: 7.5px;
+      padding: 5px 10px 5px 10px;
+      text-decoration: none;
+    }
+
+    .sidebar {
+      height: 100%;
+      display: none;
+    }
+  </style>
+
+  
+    <div class="owa_script "><textarea class="owa_script_scrool"
+        id="owa_script_scrool">   this is a voice activated telepromptor </textarea>
+      
+        <button class="burger" onclick="sidemenu()">
+          <span class="burgerIngredient -topBun"></span>
+          <span class="burgerIngredient -patty"></span>
+          <span class="burgerIngredient -bottomBun"></span>
+        </button>
+      
+      </div>
+
+
+        <div class="sidebar">
+          <div class="high">
+  
+            <div class="file-upload">
+              <div class="file-select">
+                <div class="file-select-button" id="fileName">Choose File</div>
+                <div class="file-select-name" id="noFile">No file chosen...</div>
+                <input type="file" name="chooseFile" id="chooseFile" onchange="openFile(event, 'owa_script_scrool')">
+              </div>
+            </div>
+  
+            <div class="wrap">
+              <h1 class="heading">Font Size</h1>
+              <div class="is-rangeInput">
+                <output id="output1" class="range__label" for="fontsiz">0</output>
+                <input type="range" id="fontsiz" name="font_size" min="5" max="100" step="1" value="45">
+              </div>
+            </div>
+  
+            <div class="wrap">
+              <h1 class="heading">Noice / Voice Level</h1>
+              <div class="is-rangeInput">
+                <output id="output2" class="range__label" for="owa_frequency">0</output>
+                <input type="range" id="owa_frequency" name="Noice_level" min="3" max="1000" step="1" value="150">
+              </div>
+            </div>
+  
+            <div class="wrap">
+              <h1 class="heading">Script Speed</h1>
+              <div class="is-rangeInput">
+                <output id="output2" class="range__label" for="owa_scrool_speed">0</output>
+                <input type="range" id="owa_scrool_speed" name="Noice_level" min="1" max="60" step="1" value="1">
+              </div>
+            </div>
+  
+            <div class="wrap pd15">
+              <input class="_fliiip box" value="Save Script" type="button" onclick="save_script()">
+            </div>
+  
+            <div class="wrap pd15">
+              <input class="_fliiip box" value="flip Text" type="button" onclick="flipstyle()">
+            </div>
+  
+       
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <audio id="microphone" autoplay></audio>
+  <div class="wrap hidee">
+    <canvas id="canvas" width="1000" height="350"></canvas>
+  </div>
+
+
+
+
+  <script src="./docxtemplater.js"></script>
+  <script src="./jszip.js"></script>
+  <script>
+
+
+
+
+
+
+    // choose file custom
+    $('#chooseFile').bind('change', function () {
+      var filename = $("#chooseFile").val();
+      if (/^\s*$/.test(filename)) {
+        $(".file-upload").removeClass('active');
+        $("#noFile").text("No file chosen...");
+      }
+      else {
+        $(".file-upload").addClass('active');
+        $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
+      }
+    });
+
+
+
+    // load chosed file
+    var openFile = function (event, scriptarea) {
+      var input = event.target;
+      var reader = new FileReader();
+
+      var validExt = ['txt', 'TXT'];
+      var ext = input.files[0].name.split('.').pop();
+
+      if (validExt.indexOf(ext.toLowerCase()) == -1) {
+        reader.onload = function () {
+          var zip = new JSZip(reader.result);
+          var doc = new window.docxtemplater().loadZip(zip);
+          var text = doc.getFullText();
+          var node = document.getElementById(scriptarea);
+          node.innerText = text;
+        };
+        reader.readAsBinaryString(input.files[0]);
+      }
+      else {
+        reader.onload = function (e) {
+          var textArea = document.getElementById(scriptarea);
+          textArea.value = e.target.result;
+        };
+        reader.readAsText(input.files[0]);
+      }
+    };
+
+
+
+
+    // number range cotrol
+    $(function () {
+      var rangeInputs = $('input[type="range"]');
+
+      for (i = 0; i < rangeInputs.length; i++) {
+        updateRangeValue(rangeInputs[i]);
+        updateRangeLabel(rangeInputs[i]);
+      }
+
+      rangeInputs.on('input change', function () {
         updateRangeValue(this);
         updateRangeLabel(this);
-    })
-});
-function updateRangeValue(element) {
-    $('output[for="' + element.id + '"]').text(element.value);
+      })
+    });
+    function updateRangeValue(element) {
+      $('output[for="' + element.id + '"]').text(element.value);
 
-if( element.name == "font_size"){
-    document.getElementById("owa_script_scrool").style.fontSize= element.value+ "px";
-}
+      if (element.name == "font_size") {
 
 
-}
-function updateRangeLabel(element) {    
-    var elementWidth = $(element).width()
-        outputWidth = $('output[for="' + element.id + '"]').outerWidth(),
+        document.getElementById("owa_script_scrool").style.fontSize = element.value + "px";
+      }
+
+
+    }
+    function updateRangeLabel(element) {
+      var elementWidth = $(element).width()
+      outputWidth = $('output[for="' + element.id + '"]').outerWidth(),
         thumbWidth = 15,
         // output position: first half calculates the position of thumb, second half calculates output offset to center above thumb.
-        outputPosition = (((elementWidth - thumbWidth) / element.max) * element.value) - (outputWidth/2 - thumbWidth/2);    
-        
-    $('output[for="' + element.id + '"]').css('left', outputPosition);
-}
+        outputPosition = (((elementWidth - thumbWidth) / element.max) * element.value) - (outputWidth / 2 - thumbWidth / 2);
 
-
-
-
-
-
-// voice script scroll file
-var canvas = document.getElementById('canvas');
-navigator.mediaDevices = navigator.mediaDevices || ((navigator.mozGetUserMedia || navigator.webkitGetUserMedia) ? {
-  getUserMedia: function (c) {
-    return new Promise(function (y, n) {
-      (navigator.mozGetUserMedia ||
-        navigator.webkitGetUserMedia).call(navigator, c, y, n);
-    });
-  }
-} : null);
-
-if (!navigator.mediaDevices.getUserMedia) {
-  tip.innerHTML = 'your browser does not have mediastream support';
-}
-
-function startRecord(e) {
-  var record = navigator.mediaDevices.getUserMedia({
-    audio: true,
-    video: false
-  });
-  record.then(function onSuccess(stream) {
-      
-    audioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext;
-    try {
-      context = new audioContext();
-    } catch (e) {
-      console.log('not support AudioContext');
+      $('output[for="' + element.id + '"]').css('left', outputPosition);
     }
 
-    audioInput = context.createMediaStreamSource(stream);
-    var binaryData = [];
-    binaryData.push(stream);
-    microphone.src = window.URL.createObjectURL(new Blob(binaryData, { type: 'application/zip' }));
-    microphone.onloadedmetadata = function (e) { };
-    var analyser = context.createAnalyser();
-    audioInput.connect(analyser);
 
-    drawSpectrum(analyser);
-      
-  });
-  record.catch(function (e) {
-    tip.innerHTML = e.name; 
-  });
-  var drawSpectrum = function (analyser) {
-      
 
-      
-    console.log(new Uint8Array(analyser.frequencyBinCount));
-    var canvas = document.getElementById('canvas'),
-    cwidth = canvas.width,
-    cheight = canvas.height,
-    meterWidth = 5,
-    gap = 1,
-    meterNum = 250,
-    ctx = canvas.getContext('2d'),
-    gradient = ctx.createLinearGradient(0, 0, 0, cheight);
-    gradient.addColorStop(1, '#a467af');
-    gradient.addColorStop(0.3, '#ff0');
-    gradient.addColorStop(0, '#f00');
-    ctx.fillStyle = gradient;
 
-    var drawMeter = function () {
-      var array = new Uint8Array(analyser.frequencyBinCount);
-      analyser.getByteFrequencyData(array);
 
-      var step = Math.round(array.length / meterNum);
-      ctx.clearRect(0, 0, cwidth, cheight);
-      
-      for (var i = 0; i < meterNum; i++) {
-   
-          var value = array[i * step];
-          var gggg = ctx.fillRect(i * (meterWidth + gap), cheight - value, meterWidth, cheight);
-          var owa_scrlsp = document.getElementById('owa_scrool_speed').value;
-          var owa_frequency = document.getElementById('owa_frequency').value;  
-if(value > parseInt(owa_frequency)){
-    $("#owa_script_scrool").scrollTop($("#owa_script_scrool").scrollTop() + parseInt(owa_scrlsp)); 
-    break;
-}
-      }   
-      
 
-      requestAnimationFrame(drawMeter);
-  
+    // voice script scroll file
+    var canvas = document.getElementById('canvas');
+    navigator.mediaDevices = navigator.mediaDevices || ((navigator.mozGetUserMedia || navigator.webkitGetUserMedia) ? {
+      getUserMedia: function (c) {
+        return new Promise(function (y, n) {
+          (navigator.mozGetUserMedia ||
+            navigator.webkitGetUserMedia).call(navigator, c, y, n);
+        });
+      }
+    } : null);
 
+    if (!navigator.mediaDevices.getUserMedia) {
+      tip.innerHTML = 'your browser does not have mediastream support';
     }
-    requestAnimationFrame(drawMeter);
-  }
-}
 
-startRecord();
+    function startRecord(e) {
+      var record = navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: false
+      });
+      record.then(function onSuccess(stream) {
+
+        audioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext;
+        try {
+          context = new audioContext();
+        } catch (e) {
+          console.log('not support AudioContext');
+        }
+
+        audioInput = context.createMediaStreamSource(stream);
+        var binaryData = [];
+        binaryData.push(stream);
+        microphone.src = window.URL.createObjectURL(new Blob(binaryData, { type: 'application/zip' }));
+        microphone.onloadedmetadata = function (e) { };
+        var analyser = context.createAnalyser();
+        audioInput.connect(analyser);
+
+        drawSpectrum(analyser);
+
+      });
+      record.catch(function (e) {
+        tip.innerHTML = e.name;
+      });
+      var drawSpectrum = function (analyser) {
 
 
 
-// flip script
-function flipstyle(){
-    $("#owa_script_scrool").toggleClass('flipclass');
-    $(".owa_settings").toggleClass('nightmode');
+        console.log(new Uint8Array(analyser.frequencyBinCount));
+        var canvas = document.getElementById('canvas'),
+          cwidth = canvas.width,
+          cheight = canvas.height,
+          meterWidth = 5,
+          gap = 1,
+          meterNum = 250,
+          ctx = canvas.getContext('2d'),
+          gradient = ctx.createLinearGradient(0, 0, 0, cheight);
+        gradient.addColorStop(1, '#a467af');
+        gradient.addColorStop(0.3, '#ff0');
+        gradient.addColorStop(0, '#f00');
+        ctx.fillStyle = gradient;
+
+        var drawMeter = function () {
+          var array = new Uint8Array(analyser.frequencyBinCount);
+          analyser.getByteFrequencyData(array);
+
+          var step = Math.round(array.length / meterNum);
+          ctx.clearRect(0, 0, cwidth, cheight);
+
+          for (var i = 0; i < meterNum; i++) {
+
+            var value = array[i * step];
+            var gggg = ctx.fillRect(i * (meterWidth + gap), cheight - value, meterWidth, cheight);
+            var owa_scrlsp = document.getElementById('owa_scrool_speed').value;
+            var owa_frequency = document.getElementById('owa_frequency').value;
+            if (value > parseInt(owa_frequency)) {
+              $("#owa_script_scrool").scrollTop($("#owa_script_scrool").scrollTop() + parseInt(owa_scrlsp));
+              break;
+            }
+          }
+
+
+          requestAnimationFrame(drawMeter);
+
+
+        }
+        requestAnimationFrame(drawMeter);
+      }
+    }
+
+    startRecord();
+
+
+
+    // flip script
+    function flipstyle() {
+      $("#owa_script_scrool").toggleClass('flipclass');
+
+
+
+      var msg = $("#owa_script_scrool").val().replace(/\n/g, "");
+      $("#owa_script_scrool").val(msg);
+    }
+
+
+    function save_script() {
+
+      var words = $("#owa_script_scrool").val().replace(/\n/g, "");
+      localStorage.setItem("words", words);
+
+
+      var scrollspeed = $("#owa_scrool_speed").val().replace(/\n/g, "");
+      localStorage.setItem("scrollspeed", scrollspeed);
+
+      var noicelavel = $("#owa_frequency").val().replace(/\n/g, "");
+      localStorage.setItem("noicelavel", noicelavel);
+
+
+      var fontsiz = $("#fontsiz").val().replace(/\n/g, "");
+      localStorage.setItem("fontsiz", fontsiz);
+
+      alert('Saved Sucessfully !');
+    }
+
+ 
+
+    function init() {
+
+      words = localStorage.getItem("words");
+
+      words = words || "This voice activated teleprompter listens to your voice and scrolls automatically.";
+
+      $("#owa_script_scrool").val(words);
+
+
+      scrollspeed = localStorage.getItem("scrollspeed")
+      if(scrollspeed){
+      $("#owa_scrool_speed").val(scrollspeed);
+      $("#owa_frequency").val(localStorage.getItem("noicelavel"));
+
+      $("#fontsiz").val(localStorage.getItem("fontsiz"));
+      $("#output1").val(localStorage.getItem("fontsiz"));
+      }
     
+      
 
-    var msg = $("#owa_script_scrool").val().replace(/\n/g, "");
-    $("#owa_script_scrool").val(msg);
-}
-
-
-function save_script() {
-
-var words = $("#owa_script_scrool").val().replace(/\n/g, "");
-localStorage.setItem("words", words);
-alert('Saved Sucessfully !');
-}
+    }
+    init();
 
 
+    // side menu
+    function sidemenu() {
+      $(".sidebar").toggleClass('open');
 
-function init() {
-
-words = localStorage.getItem("words");
-
-words = words || "This voice activated teleprompter listens to your voice and scrolls automatically.";
-  
-$("#owa_script_scrool").val(words);
-
-}
-init();
+    }
 
 
-// side menu
-function sidemenu(){
-    $(".sidebar").toggleClass('open');
+  </script>
 
-}
-
-
-</script>
-
-<script src="jquery.cookie.js"></script>
+  <script src="jquery.cookie.js"></script>
 </body>
+
 </html>
